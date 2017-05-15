@@ -1,0 +1,31 @@
+PATRONS
+- id (INT, primary_key, auto_increment) 
+- first_name (VARCHAR(100)) 
+- last_name (VARCHAR(100))
+- card_number (INT)
+- email (VARCHAR(100))
+- address (INT, foreign_key to ADDRESSES id)
+
+CHARGES
+- id (INT, primary_key, auto_increment)
+- patron_id (INT, foreign_key to PATRONS id)
+- date_charged (TIMESTAMP, default - current date)
+
+ADDRESSES
+- id (INT, primary_key, auto_increment)
+- street (VARCHAR(100))
+- city (VARCHAR(100))
+- state (VARCHAR(100))
+- zipcode (INT)
+
+MATERIALS
+- id (INT, primary_key, auto_increment)
+- title (VARCHAR(100))
+- type (INT)
+- borrower (INT, foreign_key to PATRONS id)
+- creator (VARCHAR(100))
+- creator_type (VARCHAR(100))
+- date_created (TIMESTAMP, default - current date)
+- current_charge (INT, foreign_key to CHARGES id)
+- previous_charge (INT, foreign_key to CHARGES id
+
